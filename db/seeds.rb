@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+20.times do |i|
+    User.create(
+        name: "User#{i+1}",
+        email: "user#{i+1}@gmail.com"
+    )
+end
+
+User.all.each do |usr| 
+    usr.blogs.create(title: "Dummy Blog for User #{usr.id}", content: "Content is Pending");
+    usr.blogs.create(title: "Dummy Blog for User #{usr.id}", content: "Content is Pending");
+end
+
+20.times do |i|
+    Course.create(
+        name: "Course#{i+1}"
+    )
+end
